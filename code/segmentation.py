@@ -39,11 +39,12 @@ def radius(gaussian_img):
     return int(np.mean(x))
 
 path=os.getcwd()
-path=os.path.join(path,"IITD Database")
+path=os.path.join(path,r"code\IITD Database")
 
 for i in range(100,125):
     img_path=os.path.join(path,str(i))
     img_path=os.path.join(img_path,"01_L.bmp")
+    print(img_path)
     image=np.array(cv2.imread(img_path))
     gray_img=np.uint8(rgb2gray(image))
     selem = disk(6)

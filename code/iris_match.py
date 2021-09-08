@@ -37,6 +37,7 @@ def radius(gaussian_img):
             x.append(radiuses[i])
     return int(np.mean(x))
 def norm_image(path):
+    path = os.path.join(os.getcwd(),path)
     image=np.array(cv2.imread(path))
     temp_img=gray_img=np.uint8(rgb2gray(image))
     selem = disk(6)
@@ -94,13 +95,13 @@ for theta in range(4):
             kernels.append(kernel)
 
 
-image_names=[r"images/01_L.bmp",r"images/002_05_L.bmp",r"images/076_02_L.bmp",r"images/08_L.bmp"]
+image_names=[r"code\images\01_L.bmp",r"code\images\002_05_L.bmp",r"code\images\076_02_L.bmp",r"code\images\08_L.bmp"]
 person1=norm_image(image_names[0])
 person2=norm_image(image_names[1])
 person3=norm_image(image_names[2])
 person4=norm_image(image_names[3])
 person_names = ('person 1', 'person 2', 'person 3','person 4')
-unknown_img=r"images/002_04_L.bmp"
+unknown_img=r"code\images\002_04_L.bmp"
 images = (person1,person2,person3,person4)
 
 
